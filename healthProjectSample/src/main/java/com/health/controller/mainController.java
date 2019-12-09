@@ -87,6 +87,11 @@ public class mainController {
 	public String register() {
 		return "register";
 	}
+
+	@RequestMapping("trainerRegister")
+	public String trainerRegister() {
+		return "trainerRegister";
+	}
 	
 	@RequestMapping("logout")
 	   public String logout(HttpServletRequest requset) {
@@ -104,7 +109,7 @@ public class mainController {
 	      return "index";
 	   }
 	   
-	   //--------------------------락카-----------------------------------------------------------------------------
+	   //--------------------------�씫移�-----------------------------------------------------------------------------
 	   @RequestMapping("lockerView")
 	   public String rockerView(Model model) {
 		  locker = (LockerService) applicationContext.getBean("lockerListServiceImpl");

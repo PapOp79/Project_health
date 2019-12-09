@@ -173,6 +173,10 @@
             <% } %>   
             </ul>
             
+            <c:if test="${sessionScope.Admin eq 1}">
+            	<button type="button" class="orange_btn"
+                  style="width: 160px; height: 33px; margin-right:20px; position: fixed; right: 120px; top:20px" onclick="return location.href='trainerRegister'"> 트레이너 등록 </button>
+            </c:if>
          </div>
       </div>
             <img class="navbar-toggler navbar-toggler-right"
