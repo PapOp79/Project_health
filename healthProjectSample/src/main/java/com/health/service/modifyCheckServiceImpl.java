@@ -23,27 +23,30 @@ public class modifyCheckServiceImpl implements LoginService {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");	
 		
+		System.out.println("modifyid : " + request.getParameter("modifyId"));
+		System.out.println("modifyPw : " + request.getParameter("modifyPw"));
+		System.out.println("modifyName : " + request.getParameter("modifyName"));
+		System.out.println("modifyEmail : " + request.getParameter("modifyEmail"));
 		
 		userDTO Udto = new userDTO();
-		Udto.setUserId(request.getParameter("modifyId"));
-		Udto.setUserPw(request.getParameter("modifyPw"));
-		Udto.setUserName(request.getParameter("modifyName"));
-		Udto.setUserEmail(request.getParameter("modifyEmail"));
+		Udto.setUserId(request.getParameter("modifyId").trim());
+		Udto.setUserPw(request.getParameter("modifyPw").trim());
+		Udto.setUserName(request.getParameter("modifyName").trim());
+		Udto.setUserEmail(request.getParameter("modifyEmail").trim());
 		
-		System.out.println(Udto.getUserId());
-		System.out.println(Udto.getUserPw());
-		System.out.println(Udto.getUserName());
-		System.out.println(Udto.getUserEmail());
+		int rn = dao.userInfoModify(Udto);
+		System.out.println("rn : "+rn);
 		
-		int rn =0;
-		try {
-			rn = dao.modifychk(Udto);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}	
-		System.out.println(rn);
+		Udto.setUserId(request.getParameter("modifyId").trim());
+		Udto.setUserPw(request.getParameter("modifyPw").trim());
+		Udto.setUserName(request.getParameter("modifyName").trim());
+		Udto.setUserEmail(request.getParameter("modifyEmail").trim());
+		
+		int rn = dao.userInfoModify(Udto);
+		System.out.println("rn찍어보기"+rn);
+		
 		if(rn == 1) {
-			userDTO user = dao.getMemberInfo(request.getParameter("userId"));
+			userDTO user = dao.getMemberInfo(request.getParameter("modifyId").trim());
 			HttpSession session = request.getSession();		
 			session.setAttribute("user_name", user.getUserName());
 			return 1;

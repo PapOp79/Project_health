@@ -114,10 +114,28 @@ public class userDAO {
 	   }
 	
 	
-	public int modifychk(userDTO Udto) {
+	public int userInfoModify(userDTO Udto) {
+		System.out.println(Udto.toString());
 		System.out.println("modify 실행");
-		System.out.println("dao USERID : "+Udto.getUserId());
-		return sqlSession.update(namespace + ".modifyCheck", Udto);
+<<<<<<< HEAD
+		int result=0;
+		try {
+		result = sqlSession.update(namespace + ".userInfoModify", Udto);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("dao result : "+result);
+		return result;
+=======
+		int result=0;
+		try {
+		result = sqlSession.update(namespace + ".userInfoModify", Udto);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("dao result : "+result);
+		return result;
+>>>>>>> branch 'master' of https://github.com/PapOp79/Project_health.git
 	}
 	
 	public String pwchk(String id) {

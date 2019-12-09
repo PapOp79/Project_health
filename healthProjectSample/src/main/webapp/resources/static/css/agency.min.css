@@ -47,6 +47,31 @@ input::placeholder{color: rgb(129,129,129) }
 	margin-bottom: 10px;
 }
 
+.locker-btn-2{
+	background-color: #fe6000;
+	width:20px;
+	height: 20px;
+	border-color: white;
+	color: white;
+	margin-right:2px;
+	margin-bottom: 10px;
+}
+
+
+.locker-div-2{
+    margin-top: 90px;
+    margin-bottom: 37px;
+    margin-right: 57px;
+    text-align: center;
+}
+
+.locker-btn-ul {
+	list-style-type: none;
+	display: inline;
+	color: white;
+	margin-right: 22px;
+}
+
 .text-primary {
    color: #fed136 !important
 }
