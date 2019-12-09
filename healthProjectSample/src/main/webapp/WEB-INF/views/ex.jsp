@@ -4,19 +4,22 @@
 <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%pageContext.setAttribute("change","front");%>
 
-<%pageContext.setAttribute("change","front");%>
 
 <script type="text/javascript">
 
 
 var num= "front";
+
 function change(){
 
 if(num="front"){
 	num="back";
+	alert("back");
 }else{
 	num="front";
+	alert("front");
 }
 
 	
@@ -77,7 +80,7 @@ background-size:cover;
 
 <div align="center" style="position: relative;" >
 
-	<button onclick='change()'>전환</button>
+	<button onclick="change()">전환</button>
 		<div width="160px" height="500px" align="center" style="position: relative;">
 		<% String num ="<script>document.writeln(num)</script>";
 		if("num"== "front"){ %>
