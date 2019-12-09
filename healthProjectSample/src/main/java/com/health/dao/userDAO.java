@@ -118,5 +118,8 @@ public class userDAO {
 		System.out.println("modify 실행");
 		return sqlSession.update(namespace + ".modifyCheck", Udto);
 	}
-
+	
+	public String pwchk(String id) {
+		return sqlSession.selectOne(namespace + ".pwchk", id);
+	}
 }

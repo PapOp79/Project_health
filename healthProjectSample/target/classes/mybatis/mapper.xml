@@ -47,6 +47,10 @@
   		select * from lockerDB where lockerNum=#{lockerNum}
   	</select>
   	
+  	<select id="pwchk" resultType="String">
+  		select userPw from UserDB where userId=#{id}
+  	</select>
+  	
    	<update id="lockerModify" parameterType="Ldto">
         update lockerDB set lockerNum=#{lockerNum}, lockerName=#{lockerName}, lockerStartDate=#{lockerStartDate}, lockerEndDate=#{lockerEndDate} where lockerNum=#{lockerNum}
     </update>
