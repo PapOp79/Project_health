@@ -9,12 +9,11 @@
 	<script>
 		function deletechk(){
 			if(confirm("정말로 회원탈퇴를 하시겠습니까?") == true){
-			location.href="delete";		
+				location.href="deletepwchk";
 			} else {
 				alert("♥");
-			location.href="index";
-			}
-			
+				location.href="index";
+			}	
 		}
 		
 		function submitform(){

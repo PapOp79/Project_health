@@ -1,3 +1,4 @@
+  
 package com.health.dto;
 
 import java.util.Date;
@@ -95,6 +96,4 @@ public class userDTO {
 	public void setAdmin(int admin) {
 		Admin = admin;
 	}
-	
-	
 }

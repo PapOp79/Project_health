@@ -13,7 +13,7 @@
    <%@ include file="include/header.jspf" %>
    <div style = "margin-left:25%">
    <h4 class="modal-title">
-      <span style="color: #fe6000;">HOUGYM User</span> 회원 가입
+      <span style="color: #fe6000;">HOUGYM Trainer</span> 등록
    </h4>
    </div>
    <br>
@@ -23,7 +23,7 @@
          style="cellpadding: 0; cellspacing: 0; margin: 0 auto; width: 100%;">
            <tr>
            <td>
-            <input type="text" value="0" id ="Admin" name = "Admin" hidden="true">
+            <input type="text" value="2" id ="Admin" name = "Admin" hidden="true">
            </td>
             
          </tr>
@@ -170,14 +170,14 @@
          <tr>
             <td style="padding-top: 10px; text-align: center">
                <p>
-                  <strong>회원가입하셔서 HOUGYM의 회원이 되어보세요~~!</strong>
+                  <strong>HOUGYM Trainer 등록</strong>
                </p>
             </td>
          </tr>
 
          <tr>
             <td style="width: 100%; text-align: center; colspan: 2;"><input
-               type="submit" value="회원 가입" class="btn form-control tooltipstered"
+               type="submit" value="트레이너 등록" class="btn form-control tooltipstered"
                id="signup-btn"
                style="background-color: #fe6000; margin-top: 0; height: 40px; color: white; border: 0px solid #388E3C; opacity: 0.8">
             </td>

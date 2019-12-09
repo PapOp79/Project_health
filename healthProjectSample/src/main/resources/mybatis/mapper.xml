@@ -22,8 +22,13 @@
         insert into userDB (userId, userPw, userName, userEmail, userRegDate, Admin, userAge, userHeight, userWeight, userSex) values(#{userId},#{userPw},#{userName},#{userEmail},current_date,#{Admin},#{userAge}, #{userHeight}, #{userWeight}, #{userSex})
      </insert>
      
+<<<<<<< HEAD
      <update id="userInfoModify" parameterType="Udto">
      	update userDB set userPw=#{userPw}, userName=#{userName}, userEmail=#{userEmail} where userId=#{userId} 
+=======
+     <update id="modifyCheck" parameterType="Udto">
+     	update userDB set userPw=#{userPw},userEmail=#{userEmail},userName=#{userName} where userId=#{userId};
+>>>>>>> branch 'master' of https://github.com/PapOp79/Project_health.git
      </update>
    
   	<!-- 락카  -->
@@ -45,6 +50,10 @@
   	
   	<select id="lockerRegiOkMember" resultType="Ldto">
   		select * from lockerDB where lockerNum=#{lockerNum}
+  	</select>
+  	
+  	<select id="pwchk" resultType="String">
+  		select userPw from UserDB where userId=#{id}
   	</select>
   	
    	<update id="lockerModify" parameterType="Ldto">

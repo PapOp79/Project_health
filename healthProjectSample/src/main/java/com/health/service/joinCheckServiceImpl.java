@@ -20,7 +20,7 @@ public class joinCheckServiceImpl implements LoginService{
    private userDAO dao;
    
    @Override
-   public void execute(Model model) {
+   public int execute(Model model) {
       Map<String, Object> map = model.asMap();
       HttpServletRequest request = (HttpServletRequest) map.get("request");
       userDTO Udto = new userDTO();
@@ -36,12 +36,11 @@ public class joinCheckServiceImpl implements LoginService{
       
       int result = dao.joinCheck(Udto);
       String joinResult;
-      if(result==0) {
-         joinResult = "joinsuccess";
-         System.out.println(joinResult);
+      if(result==1) {
+         return 1;
+         
       } else { 
-         joinResult = "joinfail";
-         System.out.println(joinResult);
+         return 0;
       }
    }
 
