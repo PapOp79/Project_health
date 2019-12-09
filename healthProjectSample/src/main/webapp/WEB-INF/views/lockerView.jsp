@@ -8,7 +8,7 @@
 <head>
 
 
-<title>Insert title here</title>
+<title>락카관리</title>
 
 <script language="JavaScript">
 function open_pop(lockerNum){
