@@ -37,13 +37,6 @@ public class modifyCheckServiceImpl implements LoginService {
 		int rn = dao.userInfoModify(Udto);
 		System.out.println("rn : "+rn);
 		
-		Udto.setUserId(request.getParameter("modifyId").trim());
-		Udto.setUserPw(request.getParameter("modifyPw").trim());
-		Udto.setUserName(request.getParameter("modifyName").trim());
-		Udto.setUserEmail(request.getParameter("modifyEmail").trim());
-		
-		int rn = dao.userInfoModify(Udto);
-		System.out.println("rn찍어보기"+rn);
 		
 		if(rn == 1) {
 			userDTO user = dao.getMemberInfo(request.getParameter("modifyId").trim());

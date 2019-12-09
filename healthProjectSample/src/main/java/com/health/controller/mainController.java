@@ -114,6 +114,11 @@ public class mainController {
 	public String register() {
 		return "register";
 	}
+
+	@RequestMapping("trainerRegister")
+	public String trainerRegister() {
+		return "trainerRegister";
+	}
 	
 	@RequestMapping("logout")
 	   public String logout(HttpServletRequest requset) {
