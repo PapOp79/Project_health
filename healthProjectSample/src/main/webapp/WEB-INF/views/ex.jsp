@@ -105,7 +105,7 @@
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">모달 타이틀</h4>
+				<h4 class="modal-title" id="myModalLabel">뒷다리</h4>
 			</div>
 			<div class="modal-body">뒷 다리</div>
 			<div class="modal-footer">
@@ -122,7 +122,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">팔</h4>
+				<h4 class="modal-title" id="myModalLabel">뒷 팔</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
