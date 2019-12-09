@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>락카등록</title>
 </head>
 <body>
 락커팝업창입니다.
