@@ -23,7 +23,7 @@
      </insert>
      
      <update id="modifyCheck" parameterType="Udto">
-     	update userDB set userPw=#{userPw}, userEmail=#{userEmail}, username=#{userName} where userid=#{userId}
+     	update userDB set userPw=#{userPw},userEmail=#{userEmail},userName=#{userName} where userId=#{userId};
      </update>
    
   	<!-- 락카  -->

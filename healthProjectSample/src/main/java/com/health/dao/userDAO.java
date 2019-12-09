@@ -116,6 +116,7 @@ public class userDAO {
 	
 	public int modifychk(userDTO Udto) {
 		System.out.println("modify 실행");
+		System.out.println("dao USERID : "+Udto.getUserId());
 		return sqlSession.update(namespace + ".modifyCheck", Udto);
 	}
 

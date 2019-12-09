@@ -23,22 +23,25 @@ public class modifyCheckServiceImpl implements LoginService {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");	
 		
-		System.out.println("modifyid : " + request.getParameter("modifyId"));
-		System.out.println("modifyPw : " + request.getParameter("modifyPw"));
-		System.out.println("modifyName : " + request.getParameter("modifyName"));
-		System.out.println("modifyEmail : " + request.getParameter("modifyEmail"));
+		
 		userDTO Udto = new userDTO();
 		Udto.setUserId(request.getParameter("modifyId"));
 		Udto.setUserPw(request.getParameter("modifyPw"));
 		Udto.setUserName(request.getParameter("modifyName"));
 		Udto.setUserEmail(request.getParameter("modifyEmail"));
+		
+		System.out.println(Udto.getUserId());
+		System.out.println(Udto.getUserPw());
+		System.out.println(Udto.getUserName());
+		System.out.println(Udto.getUserEmail());
+		
 		int rn =0;
 		try {
 			rn = dao.modifychk(Udto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
-		
+		System.out.println(rn);
 		if(rn == 1) {
 			userDTO user = dao.getMemberInfo(request.getParameter("userId"));
 			HttpSession session = request.getSession();		
