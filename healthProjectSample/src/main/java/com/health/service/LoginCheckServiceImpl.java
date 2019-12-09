@@ -38,6 +38,7 @@ public class LoginCheckServiceImpl implements LoginService{
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", request.getParameter("userId").trim());		
 			session.setAttribute("user_name", user.getUserName());
+			session.setAttribute("Admin", user.getAdmin());
 			return 1;
 		}
 		return 1;
