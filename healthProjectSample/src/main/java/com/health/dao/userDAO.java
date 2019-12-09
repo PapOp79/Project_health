@@ -114,9 +114,17 @@ public class userDAO {
 	   }
 	
 	
-	public int modifychk(userDTO Udto) {
+	public int userInfoModify(userDTO Udto) {
+		System.out.println(Udto.toString());
 		System.out.println("modify 실행");
-		return sqlSession.update(namespace + ".modifyCheck", Udto);
+		int result=0;
+		try {
+		result = sqlSession.update(namespace + ".userInfoModify", Udto);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("dao result : "+result);
+		return result;
 	}
 
 }

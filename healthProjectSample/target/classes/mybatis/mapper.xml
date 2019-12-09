@@ -22,8 +22,8 @@
         insert into userDB (userId, userPw, userName, userEmail, userRegDate, Admin, userAge, userHeight, userWeight, userSex) values(#{userId},#{userPw},#{userName},#{userEmail},current_date,#{Admin},#{userAge}, #{userHeight}, #{userWeight}, #{userSex})
      </insert>
      
-     <update id="modifyCheck" parameterType="Udto">
-     	update userDB set userPw=#{userPw}, userEmail=#{userEmail}, username=#{userName} where userid=#{userId}
+     <update id="userInfoModify" parameterType="Udto">
+     	update userDB set userPw=#{userPw}, userName=#{userName}, userEmail=#{userEmail} where userId=#{userId} 
      </update>
    
   	<!-- 락카  -->
@@ -54,24 +54,6 @@
     <update id="lockerDelete" parameterType="Ldto">
     	update lockerDB set lockerNum=#{lockerNum}, lockerName=#{lockerName}, lockerStartDate=#{lockerStartDate}, lockerEndDate=#{lockerEndDate}, lockerCheck= #{lockerCheck} where lockerNum=#{lockerNum}
     </update>
-  	
-  	
-  	
-  	<!-- 
-  	<select id="listAll" resultType="dto">
-  		select * from mybatis_test
-  	</select>
-  	<insert id="savedata" parameterType="dto">
-  		insert into mybatis_test values(#{num}, #{name}, #{mydate})
-  	</insert>
-  	<update id="updatedata" parameterType="dto">
-  		update mybatis_test set name=#{name},mydate=#{mydate} where num=#{num}
-  	</update>
-  	<delete id="delete" parameterType="String">
-  		delete from mybatis_test where num=#{num}
-  	</delete>
-  	
-  	 -->
-  
+
   	
   </mapper>
