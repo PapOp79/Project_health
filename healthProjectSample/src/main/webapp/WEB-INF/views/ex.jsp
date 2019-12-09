@@ -4,7 +4,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div style="background-color:black;">
 <%@ include file="include/header.jspf"%>
+<style>
+@FONT-FACE{
+font-family:'Dohyun';
+src:url(resources/static/font/Dohyun.ttf)
+}
+</style>
 
+<p style="font-family: Dohyun; color:white; size:6;">
+운동방법 페이지
+</p>
 
 <c:set var="aaa" value="앞">
 

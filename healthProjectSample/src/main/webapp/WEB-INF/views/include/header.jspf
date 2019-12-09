@@ -172,13 +172,13 @@
                href="mypage">MYPAGE</a></li>
             <% } %>   
             </ul>
-            
-         </div>
-      </div>
             <img class="navbar-toggler navbar-toggler-right"
                style="float: right; width: 125px; height: 61px;" class="img-fluid"
                   data-toggle="collapse" data-target="#navbarResponsive"
                      id="menu" value="menu" onClick="action();" src="resources/static/img/close-btn.png?ver=1.1"/>
+            
+         </div>
+      </div>
    </nav>
    <br>
    <br>
