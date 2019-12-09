@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>인덱스123</title>
 </head>
 <body style="background-image: url('resources/static/img/index-background.png'); height:100vh; background-repeat: no-repeat; background-size: cover; background-position: center;">

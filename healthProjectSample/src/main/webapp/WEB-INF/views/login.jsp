@@ -10,7 +10,7 @@
 </script>
 
 
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/static/css/agency.min.css?ver=1.2.18" >
@@ -44,7 +44,7 @@
 			
 			<hr style="border: solid 4px #fe6000; width:90%; border-radius: 12px 12px / 12px 12px;">
 			
-			<p style="font-family: dohyun; font-size: 1em; color: white; font-style: none; margin-left: 8%; text-decoration: none;"><a href="findid" style="color:white; text-decoration: none;">아이디 찾기</a> / <a href="findpw" style="color:white; text-decoration: none;">비밀번호 찾기</a></p>
+			<p style="font-family: dohyun; font-size: 1em; color: white; font-style: none; margin-left: 8%; text-decoration: none;"><a href="findid" style="color:white; text-decoration: none;">아이디 찾기</a> / <a href="#" style="color:white; text-decoration: none;">비밀번호 찾기</a></p>
 			<p style="font-family: dohyun; font-size: 1em; color: white; font-style: none; margin-left: 8%; text-decoration: none;">아직 회원이 아니신가요?</p>
 			
 			<button class="orange_btn" 
@@ -53,6 +53,10 @@
 		
 	
 	</div>
+	
+	 <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
+   <%@ include file="include/footer.jspf" %>
+   </div>
 
 </body>
 </html>
