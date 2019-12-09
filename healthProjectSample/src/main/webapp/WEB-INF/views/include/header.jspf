@@ -129,7 +129,7 @@
                <a>
                <% if(userSessionName == null) { %>
                <button type="button" class="orange_btn"
-                  style="width: 100px; height: 33px; position: fixed; right: 20px; top:20px" onclick="return location.href='login'"> Login </button>
+                  style="align-self: center; width: 100px; height: 33px; position: fixed; right: 20px; top:20px" onclick="return location.href='login'"> Login </button>
                <%}else{ %>
                <button type="button" class="orange_btn" 
                   style="width: 100px; height: 33px; position: fixed; right: 20px; top:20px" onclick="return location.href='logout'"> Logout </button>
