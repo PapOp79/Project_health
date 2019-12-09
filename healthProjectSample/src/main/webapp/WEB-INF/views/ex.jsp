@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div style="background-color:black;">
 <%@ include file="include/header.jspf"%>
 
 
@@ -9,7 +10,7 @@
 
 </c:set>
 
-<div align="center" style="position: relative;">
+<div align="center" style="position: relative;" >
 
 	<c:choose>
 		<c:when test="${aaa eq '앞'}">
@@ -139,3 +140,4 @@
    <%@ include file="include/footer.jspf" %>
 
 
+</div>
