@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>인덱스</title>
 </head>
 <body>
    <div style="position: relative;">
