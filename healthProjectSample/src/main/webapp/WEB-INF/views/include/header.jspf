@@ -172,7 +172,6 @@
                href="mypage">MYPAGE</a></li>
             <% } %>   
             </ul>
-<<<<<<< HEAD
             
             <c:if test="${sessionScope.Admin eq 1}">
             	<button type="button" class="orange_btn"
@@ -180,8 +179,6 @@
             </c:if>
          </div>
       </div>
-=======
->>>>>>> branch 'master' of https://github.com/PapOp79/Project_health.git
             <img class="navbar-toggler navbar-toggler-right"
                style="float: right; width: 125px; height: 61px;" class="img-fluid"
                   data-toggle="collapse" data-target="#navbarResponsive"
