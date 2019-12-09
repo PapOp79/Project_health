@@ -19,7 +19,7 @@ public class modifyCheckServiceImpl implements LoginService {
 	private userDAO dao;
 	
 	@Override
-	public void execute(Model model) {
+	public int execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");	
 		
@@ -46,8 +46,8 @@ public class modifyCheckServiceImpl implements LoginService {
 			userDTO user = dao.getMemberInfo(request.getParameter("userId"));
 			HttpSession session = request.getSession();		
 			session.setAttribute("user_name", user.getUserName());
+			return 1;
 		}
-		
+		return 0;	
 	}
-
 }

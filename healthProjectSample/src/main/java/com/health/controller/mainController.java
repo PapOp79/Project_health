@@ -47,10 +47,37 @@ public class mainController {
 	public String board() {
 		return "board";
 	}
+
+	@RequestMapping("mypagechk")
+	public String mypagechk() {
+		return "mypagechk";
+	}
 	
 	@RequestMapping("introduce")
 	public String introduce() {
 		return "introduce";
+	}
+	
+	@RequestMapping("success")
+	public String success() {
+		return "mypage";
+	}
+	
+	@RequestMapping("fail")
+	public String fail() {
+		return "index";
+	}
+	
+	@RequestMapping("mypagepwchk")
+	public String mypagepwchk(Model model, HttpServletRequest request) {
+		model.addAttribute("request",request);
+		login = (LoginService) applicationContext.getBean("PwCheckServiceImpl");
+		int pwchksuccess = login.execute(model);
+		if(pwchksuccess == 1) {
+			return "success";
+		} else {
+			return "fail";
+		}
 	}
 	
 	@RequestMapping("login-controller")
@@ -87,11 +114,6 @@ public class mainController {
 	public String register() {
 		return "register";
 	}
-
-	@RequestMapping("trainerRegister")
-	public String trainerRegister() {
-		return "trainerRegister";
-	}
 	
 	@RequestMapping("logout")
 	   public String logout(HttpServletRequest requset) {
@@ -109,7 +131,7 @@ public class mainController {
 	      return "index";
 	   }
 	   
-	   //--------------------------�씫移�-----------------------------------------------------------------------------
+	   //--------------------------락카-----------------------------------------------------------------------------
 	   @RequestMapping("lockerView")
 	   public String rockerView(Model model) {
 		  locker = (LockerService) applicationContext.getBean("lockerListServiceImpl");
@@ -174,7 +196,5 @@ public class mainController {
 		   locker = (LockerService) applicationContext.getBean("lockerDeleteServiceImpl");
 		   locker.execute(model);
 		   return "";
-	   }
-	   
-	
+	   }	
 }

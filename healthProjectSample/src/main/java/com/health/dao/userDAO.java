@@ -119,5 +119,8 @@ public class userDAO {
 		System.out.println("dao USERID : "+Udto.getUserId());
 		return sqlSession.update(namespace + ".modifyCheck", Udto);
 	}
-
+	
+	public String pwchk(String id) {
+		return sqlSession.selectOne(namespace + ".pwchk", id);
+	}
 }

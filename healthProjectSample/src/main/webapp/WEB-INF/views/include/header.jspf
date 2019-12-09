@@ -169,11 +169,12 @@
             
             <% } else { %>
             <li class="nav-item"><a class="nav-link-right nav-link"
-               href="mypage">MYPAGE</a></li>
+               href="mypagechk">MYPAGE</a></li>
             <% } %>   
             </ul>
 
             
+
             <c:if test="${sessionScope.Admin eq 1}">
             	<button type="button" class="orange_btn"
                   style="width: 160px; height: 33px; margin-right:20px; position: fixed; right: 120px; top:20px" onclick="return location.href='trainerRegister'"> 트레이너 등록 </button>
@@ -182,11 +183,11 @@
       </div>
 
 
+
             <img class="navbar-toggler navbar-toggler-right"
                style="float: right; width: 125px; height: 61px;" class="img-fluid"
                   data-toggle="collapse" data-target="#navbarResponsive"
                      id="menu" value="menu" onClick="action();" src="resources/static/img/close-btn.png?ver=1.1"/>
-            
          </div>
       </div>
    </nav>
