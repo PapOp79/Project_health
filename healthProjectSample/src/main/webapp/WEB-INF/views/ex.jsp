@@ -1,18 +1,74 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div style="background-color:black;">
+
+<%pageContext.setAttribute("change","front");%>
+
+<script type="text/javascript">
+
+
+var num= "front";
+function change(){
+
+if(num="front"){
+	num="back";
+}else{
+	num="front";
+}
+
+	
+}
+
+
+</script>
+
+
+<body>
 <%@ include file="include/header.jspf"%>
-<style>
+
+
+
+
+
+<style type="text/css">
+
+img[usemap] {
+
+		border: none;
+
+		height: auto;
+
+		max-width: 100%;
+
+		width: auto;
+
+	}
+
+
+
+
 @FONT-FACE{
 font-family:'Dohyun';
 src:url(resources/static/font/Dohyun.ttf)
 }
+
+body{
+
+width:100vw;
+background-color:black;
+background-repeat: no-repeat;
+background-position: left;
+background-size:cover;
+
+
+}
 </style>
 
-<p style="font-family: Dohyun; color:white; size:6;">
-운동방법 페이지
+<p style="font-family: Dohyun;color:white;size:6;margin-left: 20px;margin-top: 20px;">
+<font size="5">운동방법 페이지</font>
 </p>
 
 <c:set var="aaa" value="앞">
@@ -21,31 +77,32 @@ src:url(resources/static/font/Dohyun.ttf)
 
 <div align="center" style="position: relative;" >
 
-	<c:choose>
-		<c:when test="${aaa eq '앞'}">
-			<img src="resources/static/img/앞모습.bmp" style="max-width: 15%;"
+	<button onclick='change()'>전환</button>
+		<div width="160px" height="500px" align="center" style="position: relative;">
+		<% String num ="<script>document.writeln(num)</script>";
+		if("num"== "front"){ %>
+			<img src="resources/static/img/앞모습.bmp" style="max-width:100%;" 
 				usemap="#aaa" alt="앞모습">
+			</div>
 			<map name="aaa">
 				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
 					data-target="#myModal" style="position: fixed;">
 				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
 					data-target="#myModal1" style="position: fixed;">
 			</map>
-		</c:when>
-		<c:when test="${bbb eq '뒤'}">
-			<img src="resources/static/img/뒷모습.bmp" style="max-width: 15%;"
-				usemap="#aaa" alt="뒷모습">
+			<%}else{ %>
+				<img src="resources/static/img/뒷모습.bmp" style="max-width:100%;" 
+				usemap="#aaa" alt="앞모습">
+			</div>
 			<map name="aaa">
 				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
-					data-target="#myModal3" style="position: fixed;">
+					data-target="#myModal" style="position: fixed;">
 				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
-					data-target="#myModal4" style="position: fixed;">
+					data-target="#myModal1" style="position: fixed;">
 			</map>
-		</c:when>
-	</c:choose>
-
+ 			<%} %>
 </div>
-
+</body>
 <!-- 모달 영역 -->
 <!-- 앞모습  -->
 <!--  -->
@@ -54,11 +111,11 @@ src:url(resources/static/font/Dohyun.ttf)
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">팔</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">모달 타이틀</h4>
 			</div>
 			<div class="modal-body">
 				<div class="embed-responsive embed-responsive-16by9">
@@ -82,7 +139,7 @@ src:url(resources/static/font/Dohyun.ttf)
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">팔</h4>
+				<h4 class="modal-title" id="myModalLabel">다리</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
@@ -146,7 +203,9 @@ src:url(resources/static/font/Dohyun.ttf)
 		</div>
 	</div>
 </div>
+   <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
    <%@ include file="include/footer.jspf" %>
+   </div>
 
 
 </div>
