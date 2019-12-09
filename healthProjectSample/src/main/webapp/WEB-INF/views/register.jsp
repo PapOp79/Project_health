@@ -5,6 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+#register_div p{
+margin-left: 15%; 
+margin-bottom:2px; 
+font-family:dohyun; 
+font-size:1.15em; 
+color:white;
+}
+</style>
+
 <meta charset="utf-8">
 <title>Insert title here</title>
 </head>
@@ -14,8 +24,8 @@
    <%@ include file="include/header.jspf" %>
    
    
-   <div style="background-color: rgba(17,17,17,0.8); width:1200px; height:1200px; border-color: #fe6000; border-style:double; 
-	position: absolute; top:50%; left:50%; margin-top:-600px; margin-left:-600px;">
+   <div id="register_div" style="background-color: rgba(17,17,17,0.8); width:1200px; height:1000px; border-color: #fe6000; border-style:double; 
+	position: absolute; top:50%; left:50%; margin-top:-500px; margin-left:-600px;">
    
    <h4 class="modal-title" style="font-family:dohyun; color:white; margin-left:15%; margin-top:5%;">
       <span style="color: #fe6000;">HOUGYM User</span> 회원 가입<br><br>
@@ -32,7 +42,7 @@
          </tr>
          <tr>
             <td>
-                <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+                <p>
                   아이디를 입력해주세요.&nbsp;&nbsp;&nbsp;<span id="idChk"></span>
                </p>
             </td>
@@ -47,7 +57,7 @@
 
          <tr>
             <td style="text-align: left">
-                <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+                <p>
                   비밀번호를 입력해주세요.&nbsp;&nbsp;&nbsp;<span id="pwChk"></span>
                </p>
             </td>
@@ -62,7 +72,7 @@
 
          <tr>
             <td style="text-align: left">
-                <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+                <p>
                   비밀번호를 재확인해주세요.&nbsp;&nbsp;&nbsp;<span id="pwChk2"></span>
                </p>
             </td>
@@ -78,7 +88,7 @@
 
          <tr>
             <td style="text-align: left">
-                <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+                <p>
                   이름을 입력해주세요.&nbsp;&nbsp;&nbsp;<span id="nameChk"></span>
                </p>
             </td>
@@ -93,7 +103,7 @@
 
          <tr>
             <td style="text-align: left">
-               <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+               <p>
                   이메일을 입력해주세요.&nbsp;&nbsp;&nbsp;<span id="emailChk"></span>
                </p>
             </td>
@@ -108,7 +118,7 @@
          
          <tr>
             <td style = "text-align: left">
-               <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+               <p>
                   나이를 입력해주세요&nbsp;&nbsp;&nbsp;
                </p>
             </td>
@@ -124,7 +134,7 @@
          
          <tr>
             <td style = "text-align: left">
-               <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+               <p>
                  키를 입력해주세요.&nbsp;&nbsp;&nbsp;
                </p>
             </td>
@@ -139,7 +149,7 @@
          
          <tr>
             <td style = "text-align: left">
-               <p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">
+               <p>
                   몸무게를 입력해주세요.&nbsp;&nbsp;&nbsp;
                </p>
             </td>
@@ -153,7 +163,7 @@
          </tr>
          
          <tr>
-            <td><p style = "margin-left: 15%; margin-bottom:2px; font-family:dohyun; color:white;">남&nbsp;&nbsp;<input type = "radio" 
+            <td><p>남&nbsp;&nbsp;<input type = "radio" 
                name = "userSex" id = "userSex" value = "male"
                style = "margin-bottom: 25px; border: 1px solid #d9d9de"
                required = "required" aria-required = "true" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -164,8 +174,8 @@
          
          <tr>
             <td style="padding-top: 10px; text-align: center">
-               <p style="font-family:dohyun; color:white;">
-                  	회원가입하셔서 HOUGYM의 회원이 되어보세요~~!
+               <p style="font-family:dohyun; color:white; margin-left: 0%;">
+                  	회원가입하셔서 <span style="color: #fe6000;">HOUGYM</span>의 회원이 되어보세요~~!
                </p>
             </td>
          </tr>
