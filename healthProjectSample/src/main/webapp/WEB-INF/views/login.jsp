@@ -20,11 +20,12 @@
 </head>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/static/css/agency.min.css?ver=1.2.18" >
 
-<%@ include file="include/header.jspf" %>
-<body style="background-image: url('resources/static/img/login-background.png'); height:100vh; background-repeat: no-repeat; background-size: cover; background-position: center;">
 
+<body style="background-image: url('resources/static/img/login-background.png'); height:100vh; background-repeat: no-repeat; background-size: cover; background-position: center;">
+	<a href="index"><img src="resources/static/img/logo-btn.png" style=" width:180px; height:60px;position:absolute;> 
+	top: 8%; left:45%; "></a>
 	<div id="login_div" style="background-color: rgba(17,17,17,0.8); width:450px; height:600px; border-color: #fe6000; border-style:double; 
-	position: absolute; top:50%; left:50%; margin-top:-300px; margin-left:-225px;">
+	position: absolute; top:50%; left:50%; margin-top:-200px; margin-left:-225px;">
 		<h1 style="font-family: dohyun; margin-left:30px; margin-top:30px; color: white;"> 로그인 
 		</h1>
 
