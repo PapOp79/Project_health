@@ -19,8 +19,15 @@
 		<hr style ="width: 420px; color: white; border: solid; margin-left: 0px;">
 	</div>
 	
+	<div style="margin-left: 123px;">
+		<table border = "1">
+			<tr>
+				
+		</table>
+	</div>
+	
 </body>
 <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
    <%@ include file="include/footer.jspf" %>
-   </div>
-</html>
+   </div> 
+</html> 
