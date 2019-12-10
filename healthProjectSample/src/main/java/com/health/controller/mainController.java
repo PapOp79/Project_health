@@ -141,7 +141,7 @@ public class mainController {
 	      return "index";
 	   }
 	   
-	   //--------------------------�씫移�-----------------------------------------------------------------------------
+
 	   @RequestMapping("lockerView")
 	   public String rockerView(Model model) {
 		  locker = (LockerService) applicationContext.getBean("lockerListServiceImpl");
