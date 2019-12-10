@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>myPage</title>
+<title>myPage1</title>
 
 	<script>
 		function deletechk(){
