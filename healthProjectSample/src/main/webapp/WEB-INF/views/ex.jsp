@@ -4,24 +4,30 @@
 <script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
- <%pageContext.setAttribute("change","front");%>
+<!--  -->
 
 
 <script type="text/javascript">
 
 
-var num= "front";
 
-function change(){
 
-if(num="front"){
-	num="back";
-	alert("back");
-}else{
-	num="front";
-	alert("front");
+
+var num= pageContext.getAttribute("change");
+
+function startpage(){
+	${pageContext.setAttribute("change", "front")};
+	
+	alert("${pageContext.getAttribute('change')}");
+	console.log("${pageContext.getAttribute('change')}");
 }
 
+function change(){
+	if("${pageContext.getAttribute('change')}"=="front"){
+		${pageContext.setAttribute("change", "back")};
+	}else{
+		${pageContext.setAttribute("change", "front")};
+	}
 	
 }
 
@@ -29,7 +35,7 @@ if(num="front"){
 </script>
 
 
-<body>
+<body onload='startpage()'>
 <%@ include file="include/header.jspf"%>
 
 
@@ -82,8 +88,8 @@ background-size:cover;
 
 	<button onclick="change()">전환</button>
 		<div width="160px" height="500px" align="center" style="position: relative;">
-		<% String num ="<script>document.writeln(num)</script>";
-		if("num"== "front"){ %>
+		<% String num =request.getParameter("num");
+		if(num =="front"){ %>
 			<img src="resources/static/img/앞모습.bmp" style="max-width:100%;" 
 				usemap="#aaa" alt="앞모습">
 			</div>

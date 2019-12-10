@@ -11,7 +11,7 @@
       <%@ include file="include/header.jspf" %>
    </div>
    
-   <div style="position: relative; top: -70px;">
+   <div style="position: relative; top: -75px;">
    
       <img src="resources/static/img/index-background.png" style="width:100%; height:100%; flex: auto;">
    </div>
