@@ -23,7 +23,7 @@ border-radius: 12px 12px / 12px 12px;
 </style>
 
 <meta charset="UTF-8">
-<title>myPage1</title>
+<title>myPage2</title>
 
 	<script>
 		function deletechk(){
