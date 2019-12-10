@@ -5,7 +5,6 @@
   
   <mapper namespace="com.health.mybatis.myMapper">
   
-   
   	<select id="loginCheck" resultType="Udto">
   		select * from UserDB where userId=#{id}
   	</select>
@@ -26,8 +25,12 @@
      	update userDB set userPw=#{userPw}, userName=#{userName}, userEmail=#{userEmail} where userId=#{userId} 
 	  </update>
      <update id="modifyCheck" parameterType="Udto">
-     	update userDB set userPw=#{userPw},userEmail=#{userEmail},userName=#{userName} where userId=#{userId};
+     	update userDB set userPw=#{userPw},userEmail=#{userEmail},userName=#{userName} where userId=#{userId}
      </update>
+     
+     <delete id="delsuccess" parameterType="String">
+     	delete from userDB where userId=#{id} 
+     </delete>
    
   	<!-- 락카  -->
   	<select id="lockerList" resultType="Ldto">

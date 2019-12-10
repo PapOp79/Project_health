@@ -53,30 +53,25 @@ public class mainController {
 		return "mypagechk";
 	}
 	
+	@RequestMapping("delete")
+	public String delete() {
+		return "delete";
+	}
+	
 	@RequestMapping("introduce")
 	public String introduce() {
 		return "introduce";
 	}
 	
-	@RequestMapping("success")
-	public String success() {
-		return "mypage";
-	}
-	
-	@RequestMapping("fail")
-	public String fail() {
-		return "index";
-	}
-	
 	@RequestMapping("mypagepwchk")
 	public String mypagepwchk(Model model, HttpServletRequest request) {
 		model.addAttribute("request",request);
-		login = (LoginService) applicationContext.getBean("PwCheckServiceImpl");
+		login = (LoginService) applicationContext.getBean("pwCheckServiceImpl");
 		int pwchksuccess = login.execute(model);
 		if(pwchksuccess == 1) {
-			return "success";
+			return "redirect:mypage";
 		} else {
-			return "fail";
+			return "redirect:index";
 		}
 	}
 	
@@ -99,6 +94,16 @@ public class mainController {
 		System.out.println("userPw12 = " + request.getParameter("modifyPw"));
 		
 		login = (LoginService) applicationContext.getBean("modifyCheckServiceImpl");
+		login.execute(model);
+		
+		return "index";
+	}
+
+	@RequestMapping("delete-controller")
+	public String delete_controller(Model model, HttpServletRequest request) {
+		model.addAttribute("request",request);
+		
+		login = (LoginService) applicationContext.getBean("deleteCheckServiceImpl");
 		login.execute(model);
 		
 		return "index";
@@ -136,7 +141,6 @@ public class mainController {
 	      return "index";
 	   }
 	   
-	   //--------------------------락카-------------------------------------------------------------------------------
 	   @RequestMapping("lockerView")
 	   public String rockerView(Model model) {
 		  locker = (LockerService) applicationContext.getBean("lockerListServiceImpl");

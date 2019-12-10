@@ -11,6 +11,12 @@
       <%@ include file="include/header.jspf" %>
    </div>
    
+
+   <div style="position: relative; top: -75px;">
+   
+      <img src="resources/static/img/index-background.png" style="width:100%; height:100%; flex: auto;">
+   </div>
+
    
    <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
    <%@ include file="include/footer.jspf" %>

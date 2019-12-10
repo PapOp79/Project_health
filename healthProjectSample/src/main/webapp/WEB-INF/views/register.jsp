@@ -189,10 +189,8 @@ color:white;
    </form>
    </div>
    
-    <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
+   <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
    <%@ include file="include/footer.jspf" %>
    </div>
-   
-   
 </body>
 </html>

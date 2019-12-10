@@ -23,12 +23,15 @@ border-radius: 12px 12px / 12px 12px;
 </style>
 
 <meta charset="UTF-8">
-<title>myPage</title>
+<title>myPage2</title>
 
 	<script>
 		function deletechk(){
+			var sessionId = document.getElementById('modifyId').value;
+			console.log(sessionId);
 			if(confirm("정말로 회원탈퇴를 하시겠습니까?") == true){
-				location.href="deletepwchk";
+				location.href='delete-controller?delId='+sessionId;
+				location.href="delete";
 			} else {
 				alert("♥");
 				location.href="index";
@@ -53,12 +56,13 @@ border-radius: 12px 12px / 12px 12px;
 
 </head>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/static/css/agency.min.css?ver=1.2.22" >
+
 <body style="background-image: url('resources/static/img/login-background.png'); height:100vh; background-repeat: no-repeat; background-size: cover; background-position: center;">
 
 	<%@ include file="include/header.jspf"%>
-
+	<%@ include file="include/mypageSidevar.jsp" %>
 	
-	
+	<!-- 
 	<div id="side_div" style="width:200px; height: 700px; float: left; margin-top: 10%; margin-left: 35px;">
 		<a href="mypage">내 정보 수정</a>
 		<hr>
@@ -84,8 +88,9 @@ border-radius: 12px 12px / 12px 12px;
 		</c:choose>
 		
 	</div>
+	 -->
 	
-	<div style="background-color: rgba(17, 17, 17, 0.8); width: 450px; height: 600px; border-color: #fe6000; border-style: double; position: absolute; top: 50%; left: 50%; margin-top: -300px; margin-left: -225px;">
+	<div style="background-color: rgba(17, 17, 17, 0.8); width: 30%; height: 60%; border-color: #fe6000; border-style: double; position: absolute; top: 50%; left: 50%; min-width: 300px; transform: translate(-50%, -50%);">
 	
 		<form  id="modifyform" action="modify-controller" method="post" style="align-content: center; margin-top: 20px; margin-left: 30px;">
 			<p style="font-family: dohyun; font-size: 2em; color:white;"> 회원 정보 수정 </p> 
