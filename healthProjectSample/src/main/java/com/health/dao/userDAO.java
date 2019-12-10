@@ -112,7 +112,10 @@ public class userDAO {
 	public int joinCheck(userDTO Udto) {
 		return sqlSession.insert(namespace + ".joinCheck", Udto);
 	}
-
+	
+	public int delsuccess(String id) {
+		return sqlSession.delete(namespace + ".delsuccess", id);
+	}
 
 	public int userInfoModify(userDTO Udto) {
 		System.out.println(Udto.toString());
