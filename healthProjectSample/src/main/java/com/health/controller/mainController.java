@@ -141,10 +141,7 @@ public class mainController {
 	      return "index";
 	   }
 	   
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/PapOp79/Project_health.git
 	   @RequestMapping("lockerView")
 	   public String rockerView(Model model) {
 		  locker = (LockerService) applicationContext.getBean("lockerListServiceImpl");
