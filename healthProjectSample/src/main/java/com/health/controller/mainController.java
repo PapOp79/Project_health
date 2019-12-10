@@ -136,7 +136,7 @@ public class mainController {
 	      return "index";
 	   }
 	   
-	   //--------------------------락카-----------------------------------------------------------------------------
+	   //--------------------------락카-------------------------------------------------------------------------------
 	   @RequestMapping("lockerView")
 	   public String rockerView(Model model) {
 		  locker = (LockerService) applicationContext.getBean("lockerListServiceImpl");
