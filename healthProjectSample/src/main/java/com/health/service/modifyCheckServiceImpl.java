@@ -27,20 +27,19 @@ public class modifyCheckServiceImpl implements LoginService {
 		System.out.println("modifyPw : " + request.getParameter("modifyPw"));
 		System.out.println("modifyName : " + request.getParameter("modifyName"));
 		System.out.println("modifyEmail : " + request.getParameter("modifyEmail"));
+		
 		userDTO Udto = new userDTO();
-		Udto.setUserId(request.getParameter("modifyId"));
-		Udto.setUserPw(request.getParameter("modifyPw"));
-		Udto.setUserName(request.getParameter("modifyName"));
-		Udto.setUserEmail(request.getParameter("modifyEmail"));
-		int rn =0;
-		try {
-			rn = dao.modifychk(Udto);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}	
+		Udto.setUserId(request.getParameter("modifyId").trim());
+		Udto.setUserPw(request.getParameter("modifyPw").trim());
+		Udto.setUserName(request.getParameter("modifyName").trim());
+		Udto.setUserEmail(request.getParameter("modifyEmail").trim());
+		
+		int rn = dao.userInfoModify(Udto);
+		System.out.println("rn : "+rn);
+		
 		
 		if(rn == 1) {
-			userDTO user = dao.getMemberInfo(request.getParameter("userId"));
+			userDTO user = dao.getMemberInfo(request.getParameter("modifyId").trim());
 			HttpSession session = request.getSession();		
 			session.setAttribute("user_name", user.getUserName());
 			return 1;

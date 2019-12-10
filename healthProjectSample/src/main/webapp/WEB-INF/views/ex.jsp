@@ -2,8 +2,9 @@
 	pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div style="background-color:black;">
 <%@ include file="include/header.jspf"%>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/static/css/agency.min.css?ver=1.2.18">
 <style>
 @FONT-FACE{
 font-family:'Dohyun';
@@ -11,9 +12,12 @@ src:url(resources/static/font/Dohyun.ttf)
 }
 </style>
 
-<p style="font-family: Dohyun; color:white; size:6;">
-운동방법 페이지
-</p>
+<body style="background-color: #111111;">
+	<br><br>
+	<div style="margin-left: 123px;">
+		<h1 style="font-family: dohyun; margin-left:30px; margin-top:30px; color: white; "> 운동법 게시판</h1>
+	</div>
+	<hr style="border: solid 4px white;">
 
 <c:set var="aaa" value="앞">
 
@@ -146,7 +150,10 @@ src:url(resources/static/font/Dohyun.ttf)
 		</div>
 	</div>
 </div>
-   <%@ include file="include/footer.jspf" %>
+</body>
 
+<div style="position: fixed; bottom: 60px; margin-left: 30PX;">
+   <%@ include file="include/footer.jspf" %>
+   </div>
 
 </div>

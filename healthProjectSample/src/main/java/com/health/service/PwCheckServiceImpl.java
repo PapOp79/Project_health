@@ -20,21 +20,21 @@ public class PwCheckServiceImpl implements LoginService{
 	public int execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
-		System.out.println(request.getParameter("chkid"));
-		System.out.println(request.getParameter("chkpw"));
-		String id = request.getParameter("userId");
-		String pwd = request.getParameter("userPw");
+		System.out.println(request.getParameter("idchk"));
+		System.out.println(request.getParameter("pwchk"));
+		String id = request.getParameter("idchk");
+		String pwd = request.getParameter("pwchk");
 		String dbpw = dao.pwchk(id);
-		
-		
+		System.out.println(pwd);
+		System.out.println(dbpw);
 		
 		if(dbpw!=null) {
-			return 0;
+			if(pwd.equals(dbpw)) {
+				return 1;
+			} else {
+				return -1;	
+			}			
 		}
-		if(pwd.equals(dbpw)) {
-			return 1;
-		} else {
-			return -1;	
-		}
+		return 0;
 	}
 }
