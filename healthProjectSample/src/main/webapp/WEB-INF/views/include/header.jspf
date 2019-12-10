@@ -5,6 +5,7 @@
    String userSessionName = (String)session.getAttribute("user_name");
    String userSessionId = (String)session.getAttribute("user_id");
 %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -76,7 +77,7 @@
                      document.getElementById('menu').style.visibility = 'visible';
                  }
              }
-            
+    
              </script>         
 <style>
 .music-menu {
@@ -129,14 +130,14 @@
                <a>
                <% if(userSessionName == null) { %>
                <button type="button" class="orange_btn"
-                  style="width: 100px; height: 33px; position: fixed; right: 20px; top:20px" onclick="return location.href='login'"> Login </button>
+                  style="align-self: center; width: 100px; height: 33px; position: fixed; right: 20px; top:20px" onclick="return location.href='login'"> Login </button>
                <%}else{ %>
                <button type="button" class="orange_btn" 
                   style="width: 100px; height: 33px; position: fixed; right: 20px; top:20px" onclick="return location.href='logout'"> Logout </button>
                <%} %>
                </a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger"
-                  href="ex">운동법</a></li>
+                  href="ex" >운동법</a></li>
                <li class="nav-item dropdown"><a
                   class="nav-link js-scroll-trigger dropdown-toggle"
                   data-toggle="dropdown">Reservation</a>
@@ -169,16 +170,26 @@
             
             <% } else { %>
             <li class="nav-item"><a class="nav-link-right nav-link"
-               href="mypage">MYPAGE</a></li>
+               href="mypagechk">MYPAGE</a></li>
             <% } %>   
             </ul>
+
+            
+
+            <c:if test="${sessionScope.Admin eq 1}">
+            	<button type="button" class="orange_btn"
+                  style="width: 160px; height: 33px; margin-right:20px; position: fixed; right: 120px; top:20px" onclick="return location.href='trainerRegister'"> 트레이너 등록 </button>
+            </c:if>
             <img class="navbar-toggler navbar-toggler-right"
                style="float: right; width: 125px; height: 61px;" class="img-fluid"
                   data-toggle="collapse" data-target="#navbarResponsive"
                      id="menu" value="menu" onClick="action();" src="resources/static/img/close-btn.png?ver=1.1"/>
-            
          </div>
       </div>
+
+
+
+      
    </nav>
    <br>
    <br>

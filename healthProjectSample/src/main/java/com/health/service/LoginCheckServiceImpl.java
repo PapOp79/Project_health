@@ -20,7 +20,7 @@ public class LoginCheckServiceImpl implements LoginService{
 	private userDAO dao;
 
 	@Override
-	public void execute(Model model) {
+	public int execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		System.out.println("userId : " + request.getParameter("userId"));
@@ -36,10 +36,12 @@ public class LoginCheckServiceImpl implements LoginService{
 		if(rn == 1) {
 			userDTO user = dao.getMemberInfo(request.getParameter("userId"));
 			HttpSession session = request.getSession();
-			session.setAttribute("user_id", request.getParameter("userId"));		
+			session.setAttribute("user_id", request.getParameter("userId").trim());		
 			session.setAttribute("user_name", user.getUserName());
+			System.out.println("UserAdmin : "+ user.getAdmin());
+			session.setAttribute("Admin", user.getAdmin());
+			return 1;
 		}
-	}
-	
-	
+		return 1;
+	}	
 }

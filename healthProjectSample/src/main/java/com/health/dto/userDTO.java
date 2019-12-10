@@ -1,3 +1,4 @@
+  
 package com.health.dto;
 
 import java.util.Date;
@@ -12,7 +13,13 @@ public class userDTO {
 	private int userHeight;
 	private int userWeight;
 	private String userSex;
-//	private String userExperience;
+@Override
+	public String toString() {
+		return "userDTO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userEmail="
+				+ userEmail + ", userRegDate=" + userRegDate + ", userAge=" + userAge + ", userHeight=" + userHeight
+				+ ", userWeight=" + userWeight + ", userSex=" + userSex + ", Admin=" + Admin + "]";
+	}
+	//	private String userExperience;
 //	private String userPurpose;
 	private int Admin;
 	
@@ -89,6 +96,4 @@ public class userDTO {
 	public void setAdmin(int admin) {
 		Admin = admin;
 	}
-	
-	
 }

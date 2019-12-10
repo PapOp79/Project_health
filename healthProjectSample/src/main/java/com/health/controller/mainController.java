@@ -47,17 +47,44 @@ public class mainController {
 	public String board() {
 		return "board";
 	}
+
+	@RequestMapping("mypagechk")
+	public String mypagechk() {
+		return "mypagechk";
+	}
 	
 	@RequestMapping("introduce")
 	public String introduce() {
 		return "introduce";
 	}
 	
+	@RequestMapping("success")
+	public String success() {
+		return "mypage";
+	}
+	
+	@RequestMapping("fail")
+	public String fail() {
+		return "index";
+	}
+	
+	@RequestMapping("mypagepwchk")
+	public String mypagepwchk(Model model, HttpServletRequest request) {
+		model.addAttribute("request",request);
+		login = (LoginService) applicationContext.getBean("PwCheckServiceImpl");
+		int pwchksuccess = login.execute(model);
+		if(pwchksuccess == 1) {
+			return "success";
+		} else {
+			return "fail";
+		}
+	}
+	
 	@RequestMapping("login-controller")
 	public String login_controller(Model model, HttpServletRequest request) {
 		model.addAttribute("request",request);
-		System.out.println("userId12 = " + request.getParameter("userId"));
-		System.out.println("userPw12 = " + request.getParameter("userPw"));
+		System.out.println("이거 로그인 " + request.getParameter("userId"));
+		System.out.println("이거 로그인 " + request.getParameter("userPw"));
 		
 		login = (LoginService) applicationContext.getBean("loginCheckServiceImpl");
 		login.execute(model);
@@ -68,8 +95,8 @@ public class mainController {
 	@RequestMapping("modify-controller")
 	public String modify_controller(Model model, HttpServletRequest request) {
 		model.addAttribute("request",request);
-		System.out.println("userId12 = " + request.getParameter("userId"));
-		System.out.println("userPw12 = " + request.getParameter("userPw"));
+		System.out.println("userId12 = " + request.getParameter("modifyId"));
+		System.out.println("userPw12 = " + request.getParameter("modifyPw"));
 		
 		login = (LoginService) applicationContext.getBean("modifyCheckServiceImpl");
 		login.execute(model);
@@ -86,6 +113,11 @@ public class mainController {
 	@RequestMapping("register")
 	public String register() {
 		return "register";
+	}
+
+	@RequestMapping("trainerRegister")
+	public String trainerRegister() {
+		return "trainerRegister";
 	}
 	
 	@RequestMapping("logout")
@@ -169,7 +201,5 @@ public class mainController {
 		   locker = (LockerService) applicationContext.getBean("lockerDeleteServiceImpl");
 		   locker.execute(model);
 		   return "";
-	   }
-	   
-	
+	   }	
 }

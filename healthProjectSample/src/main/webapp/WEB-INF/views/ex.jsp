@@ -1,120 +1,165 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script
+	src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!--  -->
+
+
+
+
+
 
 
 <script type="text/javascript">
 
+var display = visible;
+var hiiden = false;
 
 
 
 
-var num= pageContext.getAttribute("change");
+
 
 function startpage(){
-	${pageContext.setAttribute("change", "front")};
-	
-	alert("${pageContext.getAttribute('change')}");
-	console.log("${pageContext.getAttribute('change')}");
-}
-
-function change(){
-	if("${pageContext.getAttribute('change')}"=="front"){
-		${pageContext.setAttribute("change", "back")};
-	}else{
-		${pageContext.setAttribute("change", "front")};
-	}
+	document.getElementById('bbbb').style.display = 'none';
 	
 }
 
+
+function change() {
+
+	 hidden = !hidden;
+    if(hidden) {
+    	document.getElementById('aaaa').style.display = 'none';
+   	 document.getElementById('bbbb').style.display = 'inline';	
+    } else {
+    	 document.getElementById('bbbb').style.display = 'none';
+       	 document.getElementById('aaaa').style.display = 'inline';
+   
+    }
+}
+/*
+var hidden = false;
+function change() {
+	 hidden = !hidden;
+    if(hidden) {
+    	 document.getElementById('bbbb').style.visibility = 'hidden';
+       	 document.getElementById('aaaa').style.visibility = 'visible';
+    } else {
+    	document.getElementById('aaaa').style.visibility = 'hidden';
+   	 document.getElementById('bbbb').style.visibility = 'visible';	
+   
+    }
+}
+*/
+/*
+function changeFront(){
+	
+	 document.getElementById('bbbb').style.visibility = 'hidden';
+	 document.getElementById('aaaa').style.visibility = 'visible';
+}
+function changeBack(){
+	 document.getElementById('aaaa').style.visibility = 'hidden';
+	 document.getElementById('bbbb').style.visibility = 'visible';	
+}
+
+*/
 
 </script>
 
 
-<body onload='startpage()'>
-<%@ include file="include/header.jspf"%>
+<body style="background-color: #111111;" onload="startpage()">
+
+	<%@ include file="include/header.jspf"%>
 
 
 
 
 
-<style type="text/css">
 
+	<style type="text/css">
+	
+.wrap { position:relative; }
+
+
+	
 img[usemap] {
-
-		border: none;
-
-		height: auto;
-
-		max-width: 100%;
-
-		width: auto;
-
-	}
-
-
-
-
-@FONT-FACE{
-font-family:'Dohyun';
-src:url(resources/static/font/Dohyun.ttf)
+	border: none;
+	height: auto;
+	max-width: 100%;
+	width: auto;
 }
 
-body{
+@FONT-FACE {
+	font-family: 'Dohyun';
+	src: url(resources/static/font/Dohyun.ttf)
+}
 
-width:100vw;
-background-color:black;
-background-repeat: no-repeat;
-background-position: left;
-background-size:cover;
-
-
+body {
+	width: 100vw;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: cover;
 }
 </style>
 
-<p style="font-family: Dohyun;color:white;size:6;margin-left: 20px;margin-top: 20px;">
-<font size="5">운동방법 페이지</font>
-</p>
+	
 
-<c:set var="aaa" value="앞">
+	<br>
+	<br>
+	<div style="margin-left: 123px;">
+		<h1
+			style="font-family: dohyun; margin-left: 30px; margin-top: 30px; color: white;">
+			운동법 게시판</h1>
+	</div>
+	<hr style="border: solid 4px white;">
 
-</c:set>
+	<c:set var="aaa" value="앞">
 
-<div align="center" style="position: relative;" >
+	</c:set>
 
-	<button onclick="change()">전환</button>
-		<div width="160px" height="500px" align="center" style="position: relative;">
-		<% String num =request.getParameter("num");
-		if(num =="front"){ %>
-			<img src="resources/static/img/앞모습.bmp" style="max-width:100%;" 
-				usemap="#aaa" alt="앞모습">
-			</div>
+	<div align="center" style="position: relative;">
+
+		<button type="button" onClick="change();">전환</button>
+
+		<div width="160px" height="500px" align="center"
+			style="position: relative;">
+
+<div class="wrap">
+
+			<img src="resources/static/img/앞모습.bmp" style="max-width: 100%;"
+				usemap="#aaa" alt="앞모습" value="aaaa" id="aaaa">
+
 			<map name="aaa">
 				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
 					data-target="#myModal" style="position: fixed;">
 				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
 					data-target="#myModal1" style="position: fixed;">
 			</map>
-			<%}else{ %>
-				<img src="resources/static/img/뒷모습.bmp" style="max-width:100%;" 
-				usemap="#aaa" alt="앞모습">
-			</div>
-			<map name="aaa">
-				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
-					data-target="#myModal" style="position: fixed;">
-				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
-					data-target="#myModal1" style="position: fixed;">
-			</map>
- 			<%} %>
+
 </div>
+<div class="wrap" >
+
+			<img src="resources/static/img/뒷모습.bmp" style="max-width: 100%;"
+				usemap="#aaa" alt="앞모습" value="bbbb" id="bbbb" >
+			<map name="aaa">
+				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
+					data-target="#myModal" style="position: fixed;">
+				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
+					data-target="#myModal1" style="position: fixed;">
+			</map>
+</div>
+
+		</div>
+	</div>
 </body>
 <!-- 모달 영역 -->
 <!-- 앞모습  -->
-<!--  -->
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
@@ -212,9 +257,16 @@ background-size:cover;
 		</div>
 	</div>
 </div>
-   <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
-   <%@ include file="include/footer.jspf" %>
-   </div>
 
+<div style="position: fixed; bottom: 60px; margin-left: 30PX;">
+	<%@ include file="include/footer.jspf"%>
+</div>
+
+
+
+
+<div style="position: fixed; bottom: 60px; margin-left: 30PX;">
+	<%@ include file="include/footer.jspf"%>
+</div>
 
 </div>

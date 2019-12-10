@@ -6,7 +6,7 @@
 <html>
 <head>
 <style type="text/css">
-#register_div p{
+#trainer_register_div p{
 margin-left: 15%; 
 margin-bottom:2px; 
 font-family:dohyun; 
@@ -24,11 +24,11 @@ color:white;
    <%@ include file="include/header.jspf" %>
    
    
-   <div id="register_div" style="background-color: rgba(17,17,17,0.8); width:1200px; height:1000px; border-color: #fe6000; border-style:double; 
+   <div id="trainer_register_div" style="background-color: rgba(17,17,17,0.8); width:1200px; height:1000px; border-color: #fe6000; border-style:double; 
 	position: absolute; top:50%; left:50%; margin-top:-500px; margin-left:-600px;">
    
-   <h4 class="modal-title" style="font-family:dohyun; color:white; margin-left:15%; margin-top:5%;">
-      <span style="color: #fe6000;">HOUGYM User</span> 회원 가입<br><br>
+   <h4 class="modal-title" style="font-family:dohyun; color:white; margin-left:15%; margin-top:5%; font-weight: normal;">
+      <span style="color: #fe6000;">HOUGYM</span> Trainer등록<br><br>
    </h4>
    <br>
    <form action="join-controller" name="signup"
