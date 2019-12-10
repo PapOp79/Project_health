@@ -1,68 +1,175 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script
+	src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="include/header.jspf"%>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/static/css/agency.min.css?ver=1.2.18">
-<style>
-@FONT-FACE{
-font-family:'Dohyun';
-src:url(resources/static/font/Dohyun.ttf)
+
+ 
+
+
+
+
+
+<script type="text/javascript">
+
+var display = visible;
+var hiiden = false;
+
+
+
+
+
+
+function startpage(){
+	document.getElementById('bbbb').style.display = 'none';
+	
+}
+
+
+function change() {
+
+	 hidden = !hidden;
+    if(hidden) {
+    	document.getElementById('aaaa').style.display = 'none';
+   	 document.getElementById('bbbb').style.display = 'inline';	
+    } else {
+    	 document.getElementById('bbbb').style.display = 'none';
+       	 document.getElementById('aaaa').style.display = 'inline';
+   
+    }
+}
+/*
+var hidden = false;
+function change() {
+	 hidden = !hidden;
+    if(hidden) {
+    	 document.getElementById('bbbb').style.visibility = 'hidden';
+       	 document.getElementById('aaaa').style.visibility = 'visible';
+    } else {
+    	document.getElementById('aaaa').style.visibility = 'hidden';
+   	 document.getElementById('bbbb').style.visibility = 'visible';	
+   
+    }
+}
+*/
+/*
+function changeFront(){
+	
+	 document.getElementById('bbbb').style.visibility = 'hidden';
+	 document.getElementById('aaaa').style.visibility = 'visible';
+}
+function changeBack(){
+	 document.getElementById('aaaa').style.visibility = 'hidden';
+	 document.getElementById('bbbb').style.visibility = 'visible';	
+}
+
+*/
+
+</script>
+
+
+<body style="background-color: #111111;" onload="startpage()">
+
+	<%@ include file="include/header.jspf"%>
+
+
+
+
+
+
+	<style type="text/css">
+	
+.wrap { position:relative; }
+
+
+	
+img[usemap] {
+	border: none;
+	height: auto;
+	max-width: 100%;
+	width: auto;
+}
+
+@FONT-FACE {
+	font-family: 'Dohyun';
+	src: url(resources/static/font/Dohyun.ttf)
+}
+
+body {
+	width: 100vw;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: cover;
 }
 </style>
 
-<body style="background-color: #111111;">
-	<br><br>
+	
+
+	<br>
+	<br>
 	<div style="margin-left: 123px;">
-		<h1 style="font-family: dohyun; margin-left:30px; margin-top:30px; color: white; "> 운동법 게시판</h1>
+		<h1
+			style="font-family: dohyun; margin-left: 30px; margin-top: 30px; color: white;">
+			운동법 게시판</h1>
 	</div>
 	<hr style="border: solid 4px white;">
 
-<c:set var="aaa" value="앞">
+	<c:set var="aaa" value="앞">
 
-</c:set>
+	</c:set>
 
-<div align="center" style="position: relative;" >
+	<div align="center" style="position: relative;">
 
-	<c:choose>
-		<c:when test="${aaa eq '앞'}">
-			<img src="resources/static/img/앞모습.bmp" style="max-width: 15%;"
-				usemap="#aaa" alt="앞모습">
+		<button type="button" onClick="change();">전환</button>
+
+		<div width="160px" height="500px" align="center"
+			style="position: relative;">
+
+<div class="wrap">
+
+			<img src="resources/static/img/앞모습.bmp" style="max-width: 100%;"
+				usemap="#aaa" alt="앞모습" value="aaaa" id="aaaa">
+
 			<map name="aaa">
 				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
 					data-target="#myModal" style="position: fixed;">
 				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
 					data-target="#myModal1" style="position: fixed;">
 			</map>
-		</c:when>
-		<c:when test="${bbb eq '뒤'}">
-			<img src="resources/static/img/뒷모습.bmp" style="max-width: 15%;"
-				usemap="#aaa" alt="뒷모습">
-			<map name="aaa">
-				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
-					data-target="#myModal3" style="position: fixed;">
-				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
-					data-target="#myModal4" style="position: fixed;">
-			</map>
-		</c:when>
-	</c:choose>
 
 </div>
+<div class="wrap" >
 
+			<img src="resources/static/img/뒷모습.bmp" style="max-width: 100%;"
+				usemap="#aaa" alt="앞모습" value="bbbb" id="bbbb" >
+			<map name="aaa">
+				<area shape="circle" alt="팔" coords="34,190,17" data-toggle="modal"
+					data-target="#myModal" style="position: fixed;">
+				<area shape="circle" alt="다리" coords="81,349,34" data-toggle="modal"
+					data-target="#myModal1" style="position: fixed;">
+			</map>
+</div>
+
+		</div>
+	</div>
+</body>
 <!-- 모달 영역 -->
 <!-- 앞모습  -->
-<!--  -->
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">팔</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">모달 타이틀</h4>
 			</div>
 			<div class="modal-body">
 				<div class="embed-responsive embed-responsive-16by9">
@@ -86,7 +193,7 @@ src:url(resources/static/font/Dohyun.ttf)
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">팔</h4>
+				<h4 class="modal-title" id="myModalLabel">다리</h4>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
@@ -150,10 +257,16 @@ src:url(resources/static/font/Dohyun.ttf)
 		</div>
 	</div>
 </div>
-</body>
 
 <div style="position: fixed; bottom: 60px; margin-left: 30PX;">
-   <%@ include file="include/footer.jspf" %>
-   </div>
+	<%@ include file="include/footer.jspf"%>
+</div>
+
+
+
+
+<div style="position: fixed; bottom: 60px; margin-left: 30PX;">
+	<%@ include file="include/footer.jspf"%>
+</div>
 
 </div>
