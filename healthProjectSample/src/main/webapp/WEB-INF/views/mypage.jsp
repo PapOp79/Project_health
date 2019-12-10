@@ -27,8 +27,11 @@ border-radius: 12px 12px / 12px 12px;
 
 	<script>
 		function deletechk(){
+			var sessionId = document.getElementById('modifyId').value;
+			console.log(sessionId);
 			if(confirm("정말로 회원탈퇴를 하시겠습니까?") == true){
-				location.href="deletepwchk";
+				location.href='delete-controller?delId='+sessionId;
+				location.href="delete";
 			} else {
 				alert("♥");
 				location.href="index";
