@@ -26,6 +26,8 @@ public class PwCheckServiceImpl implements LoginService{
 		String pwd = request.getParameter("userPw");
 		String dbpw = dao.pwchk(id);
 		
+		
+		
 		if(dbpw!=null) {
 			return 0;
 		}
